@@ -1,4 +1,7 @@
 'use strict';
+const config = require('config');
+const utils = require('../lib/utils');
+const appConf = config.appConf;
 
 function init(callback) {
 	// init http server
@@ -6,7 +9,7 @@ function init(callback) {
 	const port = process.env.SERVICE_PORT || appConf.port;
 	const server = app.listen(port, () => {
 		console.log(`Startup ${appConf.name} in env ${process.env.NODE_ENV || 'development'} on port ${port}`);
-		console.log(`Local Address is: ${utils.getServerLocalAddressAndPort()}`);
+		console.log(`Local Address is: ${port || utils.getServerLocalAddressAndPort()}`);
 	});
 	server.on('error', onError);
     
@@ -35,10 +38,10 @@ function onError(error) {
 
 init(err => {
 	if (err) {
-		logger.error(`Error: ${JSON.stringify(err.stack || err)}`);
+		console.log(`Error: ${JSON.stringify(err.stack || err)}`);
 		return process.exit(-1);
 	} else {
-		logger.info('Server is ready!');
+		console.info('Server is ready!');
 	}
 });
 
@@ -50,5 +53,5 @@ process.on('uncaughtException', (err) => {
 		errStack: err.stack || err
 	};
 
-	logger.error(`==code:${errCodes.GLOBAL_ERR}==errMsg:${JSON.stringify(errMsg)}==`);
+	console.log(`errMsg:${JSON.stringify(errMsg)}==`);
 });

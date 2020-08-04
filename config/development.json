@@ -1,0 +1,6 @@
+{
+  "appConf": {
+      "port": 8080,
+      "name": "node-demo"
+  }  
+}
