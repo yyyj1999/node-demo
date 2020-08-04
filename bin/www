@@ -9,7 +9,7 @@ function init(callback) {
 	const port = process.env.SERVICE_PORT || appConf.port;
 	const server = app.listen(port, () => {
 		console.log(`Startup ${appConf.name} in env ${process.env.NODE_ENV || 'development'} on port ${port}`);
-		console.log(`Local Address is: ${port || utils.getServerLocalAddressAndPort()}`);
+		console.log(`Local Address is: ${utils.getServerLocalAddressAndPort()}`);
 	});
 	server.on('error', onError);
     
