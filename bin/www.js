@@ -3,7 +3,7 @@ const config = require('config');
 // const utils = require('../lib/utils');
 const rediser = require('../lib/rediser');
 const Thenjs = require('thenjs');
-const appConf = config.appConf;
+const appConf = config.get('app');
 
 function init(callback) {
     // init http server
