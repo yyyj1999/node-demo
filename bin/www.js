@@ -8,6 +8,7 @@ const appConf = config.get('app');
 function init(callback) {
     // init http server
     Thenjs(function (cont) {
+        cont();
         // Inject redis client
         rediser.init(config.get('redis'), function (err) {
             if (err) {
