@@ -11,6 +11,7 @@ const auth = require('../lib/auth/auth');
  * @returns {string} tokenType - 'Bearer' 令牌类型
  * @returns {number} expiresIn - 令牌有效期
  * @returns {string} refreshToken - 刷新令牌
+ * @returns {object} data - {accessToken: string,//授权令牌\ntokenType:'Bearer',// 令牌类型\nexpiresIn:int, // 令牌有效期\nrefreshToken:string,// 刷新令牌}
  * @security JWT
  */
 async function userLogin(req, res) {
