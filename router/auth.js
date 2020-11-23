@@ -9,8 +9,15 @@ router.post('/token', utils.reqHandler(async(req, res) => {
     res.json(utils.resJson(0, '', result));
 }));
 
-// router.post('/re-token', async(req, res) => {
-    
-// });
+// 注册
+router.post('/sign-up', utils.reqHandler(async(req, res) => {
+    const requestData = {
+        password: req.body.password,
+        username: req.body.username,
+    };
+    const result = await authService.userSignOn(requestData);
+
+    res.json(utils.resJson(0, '', result));
+}));
 
 module.exports = router;
