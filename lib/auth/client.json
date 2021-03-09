@@ -2,7 +2,7 @@
     {
         "clientId": "yqj201901281147356126",
         "clientSecret": "34a25ec3f5e642dda625c0010601cc99",
-        "name":"轻课学习圈",
+        "name":"Persona5",
         "redirectUris": [],
         "refreshTokenLifetime": 4332000,
         "accessTokenLifetime": 4332000,
@@ -10,8 +10,8 @@
         "merchant_id":[15],
         "type":"wx_app",
         "weChat":{
-            "appId":"wx93661d772eac8195",
-            "secret":"e4d4d52b0b43d1b6753d5f60d566a977"
+            "appId":"wx93661d772eacrets",
+            "secret":"e4d4d52b0b4ewrf3d5f60d566a977"
         },
         "grants": [
             "password",
